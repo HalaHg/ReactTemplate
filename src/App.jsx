@@ -1,10 +1,11 @@
 import { Header } from "./components/Header";
 import { Resource } from "./components/Resource";
 import { Page } from "./components/Page";
+import { Grid } from "./components/Grid";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from "react";
 import "./App.css";
-import { dataResources } from "./data";
+import { dataResources, dataGrid } from "./data";
 
 const CONTENTS = [
   { order : 0, name: 'Create a resource', src: '/add.png' },
@@ -42,6 +43,7 @@ function App() {
           <Route path="/" exact element={<Page onAdd={addNew} onSelect={handleSelect} contents={contents} />}
           />
           <Route path="/resource" element={<Resource dataResources={dataResources} />} />
+          <Route path="/grid" element={<Grid dataGrid={dataGrid} />} />
         </Routes>
       </div>
     </Router>
