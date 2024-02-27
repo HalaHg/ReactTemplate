@@ -1,36 +1,40 @@
 import { Header } from "./components/Header";
 import { Resource } from "./components/Resource";
-import { Content } from "./components/Content";
 import { Page } from "./components/Page";
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useState } from "react";
 import "./App.css";
 
 const CONTENTS = [
-  {  name: 'App Services',  src:'/app-services.png' },
-  {  name: 'SQL elastic pools',  src: '/sql-elastic-pools.png'}
+  { name: 'App Services', src: '/app-services.png' },
+  { name: 'SQL elastic pools', src: '/sql-elastic-pools.png' }
 ];
-
 
 function App() {
   const [contents, setContents] = useState(CONTENTS);
 
-  function handleSelect(){
-    
+  function handleSelect(selectedName) {
+    console.log(`Selected: ${selectedName}`);
   }
-  function addNew(){
-    
+
+  function addNew(newContent) {
+    setContents((prevContents) => [...prevContents, newContent]);
+    console.log(`Added new content: ${newContent.name}`);
   }
 
   return (
     <Router>
-    <>
-    <Header></Header>
-    <Content onAdd={addNew} onSelect={handleSelect} contents={contents} ></Content>
-
-    <Route path="/" exact component={Page} />
-    <Route path="/resource" exact component={Resource} />
-    </>
+      <div>
+        <Header></Header>
+        <Routes>
+          <Route
+            path="/"
+            exact
+            element={<Page onAdd={addNew} onSelect={handleSelect} contents={contents} />}
+          />
+          <Route path="/resource" element={<Resource />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
