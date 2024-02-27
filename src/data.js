@@ -196,7 +196,25 @@ export const dataResources = {
         },
       ],
     },
-  ],
+  ]
 };
 
-export const dataGrid = {};
+export const pagesContent = [
+  { order: 0, name: 'Create a resource', src: 'add.png' },
+  { order: 1, name: 'App Services', src: 'app-services.png' },
+  { order: 2, name: 'SQL elastic pools', src: 'sql-elastic-pools.png' }
+]
+
+export const dataGrid = {
+  columnDefs: [
+    { headerName: "Make", field: "make" },
+    { headerName: "Model", field: "model" },
+    { headerName: "Price", field: "price" }
+
+  ],
+  rowData: [
+    { make: "Toyota", model: "Celica", price: 35000 },
+    { make: "Ford", model: "Mondeo", price: 32000 },
+    { make: "Porsche", model: "Boxster", price: 72000 }
+  ]
+};

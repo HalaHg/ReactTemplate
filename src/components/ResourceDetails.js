@@ -1,4 +1,4 @@
-import "./ResourceDetails.css";
+import "../styles/ResourceDetails.css";
 export function ResourceDetails(props) {
   const { data } = props;
 
