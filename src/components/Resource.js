@@ -22,6 +22,7 @@ export function Resource(props) {
       categories: updatedCategories,
     });
   }
+
   return (
     <div>
       <MainTitle>{resourceData.title}</MainTitle>
@@ -31,7 +32,11 @@ export function Resource(props) {
           categories={resourceData.categories}
           onItemClick={(item) => handleClick(item)}
         ></VerticalList>
-        <ResourceDetails></ResourceDetails>
+        <ResourceDetails
+          data={resourceData.categories.find(
+            (category) => category.categSelected
+          )}
+        ></ResourceDetails>
       </div>
     </div>
   );

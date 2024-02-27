@@ -66,7 +66,7 @@ export const dataResources = {
               title: "Standard",
               links: [
                 {
-                  linkTitle: "Set up + Subscribe",
+                  linkTitle: "Subscribe",
                   link: "http://www.google.com",
                 },
                 { linkTitle: "MS Learn", link: "http://www.google.com" },
@@ -122,7 +122,7 @@ export const dataResources = {
               title: "Standard",
               links: [
                 {
-                  linkTitle: "Set up + Subscribe",
+                  linkTitle: "Set up",
                   link: "http://www.google.com",
                 },
                 { linkTitle: "MS Learn", link: "http://www.google.com" },
@@ -186,7 +186,7 @@ export const dataResources = {
               title: "Standard",
               links: [
                 {
-                  linkTitle: "Set up + Subscribe",
+                  linkTitle: "Subscribe",
                   link: "http://www.google.com",
                 },
                 { linkTitle: "MS Learn", link: "http://www.google.com" },

@@ -1,4 +1,4 @@
-.leftMenu{width:200px;margin-right: 0;list-style: none;
+.leftMenu{width:200px;margin-right: 20px;list-style: none;
     text-align: left;}
 .leftMenu li{font-size: 14px ;color:#131212;
     cursor: pointer;padding:5px 0 5px 10px;}
@@ -13,7 +13,7 @@
     color: #131212;
 }
 
-ul{padding-inline-start: 10px;}
+ul{padding-inline-start: 10px;margin-block-start: 0;}
 
 .leftMenu li:hover {
     background-color: rgb(201, 204, 206);
