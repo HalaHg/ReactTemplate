@@ -4,6 +4,7 @@ import { Page } from "./components/Page";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useState } from "react";
 import "./App.css";
+import { dataResources } from "./data";
 
 const CONTENTS = [
   { name: 'App Services', src: '/app-services.png' },
@@ -32,7 +33,7 @@ function App() {
             exact
             element={<Page onAdd={addNew} onSelect={handleSelect} contents={contents} />}
           />
-          <Route path="/resource" element={<Resource />} />
+          <Route path="/resource" element={<Resource dataResources={dataResources} />} />
         </Routes>
       </div>
     </Router>

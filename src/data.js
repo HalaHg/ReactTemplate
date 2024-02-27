@@ -1,11 +1,13 @@
-import svcImg from "../public/app-services.png";
+import svcImg from "./images/app-services.png";
 
 export const dataResources = {
   title: "Create a resource",
+  listTitle: "Categories",
   categories: [
     {
       id: 11,
       title: "Analytics",
+      categSelected: false,
       items: [
         {
           section: 1,
@@ -77,6 +79,7 @@ export const dataResources = {
     {
       id: 12,
       title: "BlockChain",
+      categSelected: false,
       items: [
         {
           section: 1,
@@ -132,6 +135,7 @@ export const dataResources = {
     {
       id: 13,
       title: "Databases",
+      categSelected: false,
       items: [
         {
           section: 1,
