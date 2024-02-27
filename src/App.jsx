@@ -1,10 +1,11 @@
 import { Header } from "./components/Header";
 import { Resource } from "./components/Resource";
 import { Page } from "./components/Page";
+import { Grid } from "./components/Grid";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useState } from "react";
 import "./App.css";
-import { dataResources } from "./data";
+import { dataResources, dataGrid } from "./data";
 
 const CONTENTS = [
   { name: 'App Services', src: '/app-services.png' },
@@ -34,6 +35,7 @@ function App() {
             element={<Page onAdd={addNew} onSelect={handleSelect} contents={contents} />}
           />
           <Route path="/resource" element={<Resource dataResources={dataResources} />} />
+          <Route path="/grid" element={<Grid dataGrid={dataGrid} />} />
         </Routes>
       </div>
     </Router>
