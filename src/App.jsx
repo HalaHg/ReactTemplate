@@ -4,6 +4,7 @@ import { Page } from "./components/Page";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from "react";
 import "./App.css";
+import { dataResources } from "./data";
 
 const CONTENTS = [
   { order : 0, name: 'Create a resource', src: '/add.png' },
@@ -40,7 +41,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={<Page onAdd={addNew} onSelect={handleSelect} contents={contents} />}
           />
-          <Route path="/resource" element={<Resource />} />
+          <Route path="/resource" element={<Resource dataResources={dataResources} />} />
         </Routes>
       </div>
     </Router>

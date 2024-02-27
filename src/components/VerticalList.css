@@ -1,5 +1,7 @@
-.leftMenu{width:200px;margin-right: 20px;}
-.leftMenu li{font-size: 14px ;color:#131212;}
+.leftMenu{width:200px;margin-right: 0;list-style: none;
+    text-align: left;}
+.leftMenu li{font-size: 14px ;color:#131212;
+    cursor: pointer;padding:5px 0 5px 10px;}
 .leftMenu li.active {
     font-size: 14px;
     color: #131212;
@@ -9,4 +11,15 @@
     font-size: 20px;
     font-weight: bold;
     color: #131212;
+}
+
+ul{padding-inline-start: 10px;}
+
+.leftMenu li:hover {
+    background-color: rgb(201, 204, 206);
+}
+.leftMenu li.title:hover {
+    font-size: 20px;
+    font-weight: bold;
+    color: #131212;background-color: #fff; cursor:auto;
 }
