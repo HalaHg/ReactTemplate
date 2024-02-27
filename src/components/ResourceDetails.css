@@ -13,7 +13,10 @@ ul {
 .links-list{display: flex;margin-right: 0;padding-inline-start: 0;}
 .links-list li{
     margin-right: 5px;
+ 
 }
+.links-list li a{text-decoration: none;
+    color: #0078d4;}
 .links-list li::after {
     content: "|";
     margin-left: 5px;
