@@ -16,9 +16,9 @@ const CONTENTS = [
 function App() {
   const [contents, setContents] = useState(CONTENTS);
 
-  function capSpace(name) { 
-    name.replace(/([A-Z]+)/g, (match) => ` ${match}`).trim();
-  }
+  // function capSpace(name) { 
+  //   name.replace(/([A-Z]+)/g, (match) => ` ${match}`).trim();
+  // }
 
   function handleSelect(selected) {
     setContents((contents) => {
@@ -27,11 +27,12 @@ function App() {
 
        return [...contents.sort((a, b) => a.order - b.order)]}
      );
+
+     //navigate("/grid");
     console.log(`Selected: ${selected.name}`);
   }
 
   function addNew(newContent) {
-    // setContents((prevContents) => [...prevContents, newContent]);
     console.log(`Added new content: ${newContent.name}`);
   }
 
@@ -43,7 +44,7 @@ function App() {
           <Route path="/" exact element={<Page onAdd={addNew} onSelect={handleSelect} contents={contents} />}
           />
           <Route path="/resource" element={<Resource dataResources={dataResources} />} />
-          <Route path="/grid" element={<Grid dataGrid={dataGrid} />} />
+          <Route path="/Grid" element={<Grid dataGrid={dataGrid} />} />
         </Routes>
       </div>
     </Router>

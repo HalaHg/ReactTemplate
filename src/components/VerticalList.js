@@ -1,7 +1,7 @@
 import "./VerticalList.css";
 
 export default function VerticalList(props) {
-  const { title, categories, onItemClick, ...other } = props;
+  const { title, categories, onItemClick, /*...other*/ } = props;
 
   return (
     <ul className="leftMenu">
@@ -9,7 +9,7 @@ export default function VerticalList(props) {
       {categories.map((e, index) => {
         return (
           <li
-            className={e.categSelected == true ? "active" : null}
+            className={e.categSelected === true ? "active" : null}
             key={e.id}
             id={e.id}
             onClick={() => onItemClick(e)}
