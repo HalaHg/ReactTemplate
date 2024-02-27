@@ -15,9 +15,9 @@ const CONTENTS = [
 function App() {
   const [contents, setContents] = useState(CONTENTS);
 
-  function capSpace(name) { 
-    name.replace(/([A-Z]+)/g, (match) => ` ${match}`).trim();
-  }
+  // function capSpace(name) { 
+  //   name.replace(/([A-Z]+)/g, (match) => ` ${match}`).trim();
+  // }
 
   function handleSelect(selected) {
     setContents((contents) => {

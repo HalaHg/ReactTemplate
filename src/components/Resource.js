@@ -4,7 +4,7 @@ import { ResourceDetails } from "./ResourceDetails";
 import { MainTitle } from "./MainTitle";
 
 export function Resource(props) {
-  const { dataResources, ...other } = props;
+  const { dataResources, /*...other*/ } = props;
 
   const [resourceData, setResourceData] = useState(dataResources);
 
