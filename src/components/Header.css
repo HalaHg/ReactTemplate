@@ -3,5 +3,5 @@
 .burgerMenu span{width:20px;height:3px;background-color: #fff;margin-bottom: 4px;display:block;}
 
 .bgHeader .logo{
-    font-weight: bold;text-transform: uppercase; margin-left: 10px;line-height: 1;
+    text-transform: uppercase; margin-left: 10px;line-height: 1;
 }
