@@ -1,5 +1,5 @@
 import { Header } from "./components/Header";
-import { Content } from "./components/Content";
+import { Page } from "./components/Page";
 import { useState } from "react";
 import "./App.css";
 
@@ -22,7 +22,7 @@ function App() {
   return (
     <>
     <Header></Header>
-    <Content onAdd={addNew} onSelect={handleSelect} contents={contents} ></Content>
+    <Page onAdd={addNew} onSelect={handleSelect} contents={contents} ></Page>
     </>
   );
 }

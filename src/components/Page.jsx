@@ -1,6 +1,6 @@
-import "./Content.css";
+import "./Page.css";
 
-export function Content({onSelect, onAdd, contents}) {
+export function Page({onSelect, onAdd, contents}) {
 
 return (
     <div className="flexBox">
