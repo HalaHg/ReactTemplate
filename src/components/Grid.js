@@ -9,20 +9,22 @@ import { MainTitle } from "./MainTitle";
 
 export function Grid(props) {
   const searchParams = useParams();
-  // const { id } = useParams();
+  //]] const { id } = useParams();
 
   const { dataGrid /*...other*/ } = props;
+  const data = dataGrid.find(x => x.id == searchParams.id);
+
 
   return (
     <>
       <Breadcrumb></Breadcrumb>
-      <MainTitle>Virtual Machines</MainTitle>
-      <Toolbar /*buttons={dataGrid[id].buttons}*/></Toolbar>
+      <MainTitle>{data.title}</MainTitle>
+      <Toolbar buttons={data.buttons}></Toolbar>
 
-      <div className="ag-theme-quartz">
+      <div className="table ag-theme-quartz">
         <AgGridReact
-          columnDefs={dataGrid.columnDefs}
-          rowData={dataGrid.rowData}
+          columnDefs={data.columnDefs}
+          rowData={data.rowData}
         ></AgGridReact>
       </div>
     </>

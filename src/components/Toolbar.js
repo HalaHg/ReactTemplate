@@ -1,11 +1,10 @@
 import "@fortawesome/fontawesome-free/css/all.css";
-import { dataGrid } from "../data";
 import "../styles/Toolbar.css";
 
-export function Toolbar({ }) {
-  let data = dataGrid;
-  let toolbarObj = data[0].buttons;
+export function Toolbar({ buttons }) {
+  let toolbarObj = buttons;
   console.log(toolbarObj);
+
   return (
     <div className="toolbar">
       {toolbarObj.map((e, index) => (
