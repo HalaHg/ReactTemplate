@@ -1,7 +1,6 @@
-import "./VerticalList.css";
-
+import "../styles/VerticalList.css";
 export default function VerticalList(props) {
-  const { title, categories, onItemClick, /*...other*/ } = props;
+  const { title, categories, onItemClick /*...other*/ } = props;
 
   return (
     <ul className="leftMenu">

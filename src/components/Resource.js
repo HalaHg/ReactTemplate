@@ -2,9 +2,10 @@ import { useState } from "react";
 import VerticalList from "./VerticalList";
 import { ResourceDetails } from "./ResourceDetails";
 import { MainTitle } from "./MainTitle";
+import Breadcrumb from "./Breadcrumb";
 
 export function Resource(props) {
-  const { dataResources, /*...other*/ } = props;
+  const { dataResources /*...other*/ } = props;
 
   const [resourceData, setResourceData] = useState(dataResources);
 
@@ -25,6 +26,7 @@ export function Resource(props) {
 
   return (
     <div>
+      <Breadcrumb />
       <MainTitle>{resourceData.title}</MainTitle>
       <div style={{ display: "flex" }}>
         <VerticalList
