@@ -330,7 +330,7 @@ export const dataGrid = [
       {
         title: "Manage",
         icon: "settings",
-        class: "fas fa-settings",
+        class: "fas fa-tools",
         hidden: true,
         disabled: false,
       },
@@ -439,6 +439,6 @@ export const dataGrid = [
         publicIpAddress: "1.1.1.1",
         disks: "2",
       },
-    ]
-  }
+    ],
+  },
 ];

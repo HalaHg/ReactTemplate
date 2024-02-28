@@ -9,11 +9,8 @@ import { MainTitle } from "./MainTitle";
 
 export function Grid(props) {
   const searchParams = useParams();
-  //]] const { id } = useParams();
-
-  const { dataGrid /*...other*/ } = props;
-  const data = dataGrid.find(x => x.id == searchParams.id);
-
+  const { dataGrid } = props;
+  const data = dataGrid.find((x) => x.id == searchParams.id);
 
   return (
     <>
@@ -21,11 +18,13 @@ export function Grid(props) {
       <MainTitle>{data.title}</MainTitle>
       <Toolbar buttons={data.buttons}></Toolbar>
 
-      <div className="table ag-theme-quartz">
-        <AgGridReact
-          columnDefs={data.columnDefs}
-          rowData={data.rowData}
-        ></AgGridReact>
+      <div className="grid-section">
+        <div className="table ag-theme-quartz">
+          <AgGridReact
+            columnDefs={data.columnDefs}
+            rowData={data.rowData}
+          ></AgGridReact>
+        </div>
       </div>
     </>
   );
