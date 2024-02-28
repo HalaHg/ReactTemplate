@@ -234,7 +234,7 @@ export const dataGrid = [
       {
         title: "Manage",
         icon: "settings",
-        class: "fas fa-settings",
+        class: "fas fa-tools",
         hidden: false,
         disabled: false,
       },
@@ -332,6 +332,13 @@ export const dataGrid = [
         icon: "settings",
         class: "fas fa-settings",
         hidden: true,
+        disabled: false,
+      },
+      {
+        title: "Refresh",
+        icon: "refresh",
+        class: "fas fa-refresh",
+        hidden: false,
         disabled: false,
       },
     ],
