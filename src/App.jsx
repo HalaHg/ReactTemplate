@@ -35,7 +35,7 @@ function App() {
       <div>
         <Header></Header>
         <Routes>
-          <Route path="/" exact element={<Page onAdd={addNew} onSelect={handleSelect} contents={pages} selectedPage={selectedPage} />}/>
+          <Route path="/" exact element={<Page onAdd={addNew} onSelect={handleSelect} contents={pages}  />}/>
           <Route path="/resource" element={<Resource dataResources={dataResources} />} />
           <Route path="/Grid/:id" element={<Grid dataGrid={dataGrid} />} />
         </Routes>

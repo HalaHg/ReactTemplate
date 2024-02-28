@@ -7,10 +7,9 @@ import "../styles/Grid.css";
 import Breadcrumb from "./Breadcrumb";
 import { MainTitle } from "./MainTitle";
 
-
 export function Grid(props) {
   const searchParams = useParams();
-  //const id = searchParams.get(":id");
+  // const { id } = useParams();
 
   const { dataGrid /*...other*/ } = props;
 
