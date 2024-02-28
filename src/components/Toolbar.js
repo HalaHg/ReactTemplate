@@ -1,7 +1,8 @@
 import "@fortawesome/fontawesome-free/css/all.css";
 import { dataGrid } from "../data";
 import "../styles/Toolbar.css";
-const Toolbar = () => {
+
+export function Toolbar({ }) {
   let data = dataGrid;
   let toolbarObj = data[0].buttons;
   console.log(toolbarObj);
@@ -15,5 +16,3 @@ const Toolbar = () => {
     </div>
   );
 };
-
-export default Toolbar;
