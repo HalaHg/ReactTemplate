@@ -200,9 +200,9 @@ export const dataResources = {
 };
 
 export const pagesContent = [
-  { order: 0, name: "Create a resource", src: "add.png" },
-  { order: 1, name: "App Services", src: "app-services.png" },
-  { order: 2, name: "SQL elastic pools", src: "sql-elastic-pools.png" },
+  { order: 0, id: 0, name: "Create a resource", src: "add.png" },
+  { order: 1, id: 33, name: "App Services", src: "app-services.png" },
+  { order: 2, id: 34, name: "SQL elastic pools", src: "sql-elastic-pools.png" },
 ];
 
 export const dataGrid = [
@@ -302,7 +302,6 @@ export const dataGrid = [
       },
     ],
   },
-
   {
     id: 34,
     title: "App Services",
@@ -433,6 +432,6 @@ export const dataGrid = [
         publicIpAddress: "1.1.1.1",
         disks: "2",
       },
-    ],
-  },
+    ]
+  }
 ];
