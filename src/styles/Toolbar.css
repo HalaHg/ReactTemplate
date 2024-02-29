@@ -1,3 +1,20 @@
-.toolbar{display: flex;margin-left: 20px;cursor: pointer;margin-bottom: 20px;}
-.toolbar .tool{margin-right: 10px;}
-.toolbar .tool i {color:#0078d4;font-size: 14px;}
+.toolbar {
+    display: flex;
+    margin-left: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.toolbar .tool {
+    margin-right: 10px;
+}
+
+.toolbar .tool i {
+    color: #0078d4;
+    font-size: 14px;
+}
+
+div[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+}

@@ -10,7 +10,7 @@ import { MainTitle } from "./MainTitle";
 export function Grid(props) {
   const searchParams = useParams();
   const { dataGrid } = props;
-  const data = dataGrid.find((x) => x.id == searchParams.id);
+  const data = dataGrid.find((x) => x.id === parseInt(searchParams.id));
 
   return (
     <>
@@ -23,6 +23,9 @@ export function Grid(props) {
           <AgGridReact
             columnDefs={data.columnDefs}
             rowData={data.rowData}
+            rowSelection={'multiple'}
+            checkboxSelection={true}
+            rowMultiSelectWithClick={true}
           ></AgGridReact>
         </div>
       </div>

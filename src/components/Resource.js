@@ -10,7 +10,6 @@ export function Resource(props) {
   const [resourceData, setResourceData] = useState(dataResources);
 
   function handleClick(item) {
-    console.log(item);
 
     // Create a copy of categories array
     const updatedCategories = resourceData.categories.map((category) => ({

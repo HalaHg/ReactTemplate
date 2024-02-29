@@ -10,10 +10,6 @@ import "./styles/App.css";
 
 function App() {
   const [pages, setPages] = useState(pagesContent);
-  const [selectedPage, setSelectedPage] = useState(null);
-  // function capSpace(name) { 
-  //   name.replace(/([A-Z]+)/g, (match) => ` ${match}`).trim();
-  // }
 
   function handleSelect(selected) {
     setPages((pages) => {
@@ -23,7 +19,6 @@ function App() {
        return [...pages.sort((a, b) => a.order - b.order)]}
      );
      
-     setSelectedPage((page) => page = pages.find((x) => x.name === selected.name).id);
   }
 
   function addNew(newContent) {

@@ -236,11 +236,11 @@ export const dataGrid = [
         icon: "settings",
         class: "fas fa-tools",
         hidden: false,
-        disabled: false,
+        disabled: true,
       },
     ],
     columnDefs: [
-      { headerName: "Name", field: "name" },
+      { headerName: "Name", field: "name", headerCheckboxSelection: true, checkboxSelection: true },
       { headerName: "Type", field: "type" },
       { headerName: "Subscription", field: "subscription" },
       { headerName: "Resource group", field: "resourceGroup" },
@@ -317,7 +317,7 @@ export const dataGrid = [
         title: "Switch",
         icon: "arrows",
         class: "fas fa-arrows",
-        hidden: false,
+        hidden: true,
         disabled: false,
       },
       {
@@ -343,7 +343,7 @@ export const dataGrid = [
       },
     ],
     columnDefs: [
-      { headerName: "Name", field: "name" },
+      { headerName: "Name", field: "name", headerCheckboxSelection: true, checkboxSelection: true },
       { headerName: "Type", field: "type" },
       { headerName: "Subscription", field: "subscription" },
       { headerName: "Resource group", field: "resourceGroup" },

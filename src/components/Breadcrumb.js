@@ -9,7 +9,6 @@ const Breadcrumb = () => {
     <div className="breadcrumb">
       <Link to="/">Home</Link>
       {pathnames.map((name, index) => {
-        console.log(pathnames);
         const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
         const isLast = index === pathnames.length - 1;
 

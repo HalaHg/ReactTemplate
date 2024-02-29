@@ -8,7 +8,7 @@ export function Page({ onSelect, onAdd, contents }) {
       <div className="flexBox">
         {contents.map((content, index) => (
           <Link
-            to={index > 0 ? "/grid/" + content.id : "/resource"}
+            to={index > 0 ? "/Grid/" + content.id : "/resource"}
             key={index}
           >
             <button
