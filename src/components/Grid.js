@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { Toolbar } from "./Toolbar";
 import "../styles/Grid.css";
 import Breadcrumb from "./Breadcrumb";
-import { MainTitle } from "./MainTitle";
+import { PageTitle } from "./PageTitle";
 
 export function Grid(props) {
   const searchParams = useParams();
@@ -15,7 +15,7 @@ export function Grid(props) {
   return (
     <>
       <Breadcrumb></Breadcrumb>
-      <MainTitle>{data.title}</MainTitle>
+      <PageTitle title={data.title}></PageTitle>
       <Toolbar buttons={data.buttons}></Toolbar>
 
       <div className="grid-section">
@@ -23,7 +23,7 @@ export function Grid(props) {
           <AgGridReact
             columnDefs={data.columnDefs}
             rowData={data.rowData}
-            rowSelection={'multiple'}
+            rowSelection={"multiple"}
             checkboxSelection={true}
             rowMultiSelectWithClick={true}
           ></AgGridReact>

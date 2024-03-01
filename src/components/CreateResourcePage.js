@@ -1,16 +1,14 @@
 import { useState } from "react";
 import VerticalList from "./VerticalList";
 import { ResourceDetails } from "./ResourceDetails";
-import { MainTitle } from "./MainTitle";
+import { PageTitle } from "./PageTitle";
 import Breadcrumb from "./Breadcrumb";
+import "../styles/CreateResourcePage.css";
 
-export function Resource(props) {
-  const { dataResources /*...other*/ } = props;
-
+export function CreateResourcePage({ dataResources }) {
   const [resourceData, setResourceData] = useState(dataResources);
 
   function handleClick(item) {
-
     // Create a copy of categories array
     const updatedCategories = resourceData.categories.map((category) => ({
       ...category,
@@ -26,7 +24,10 @@ export function Resource(props) {
   return (
     <div>
       <Breadcrumb />
-      <MainTitle>{resourceData.title}</MainTitle>
+      <PageTitle
+        rootClassName="create-resource-page-root"
+        title={resourceData.title}
+      ></PageTitle>
       <div style={{ display: "flex" }}>
         <VerticalList
           title={resourceData.listTitle}

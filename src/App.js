@@ -3,7 +3,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { Grid } from "./components/Grid";
 import { Header } from "./components/Header";
 import { Page } from "./components/Page";
-import { Resource } from "./components/Resource";
+import { CreateResourcePage } from "./components/CreateResourcePage";
 import { dataGrid, dataResources, pagesContent } from "./data";
 import "./styles/App.css";
 
@@ -31,7 +31,7 @@ function App() {
         <Header></Header>
         <Routes>
           <Route path="/" exact element={<Page onAdd={addNew} onSelect={handleSelect} contents={pages}  />}/>
-          <Route path="/resource" element={<Resource dataResources={dataResources} />} />
+          <Route path="/resource" element={<CreateResourcePage dataResources={dataResources} />} />
           <Route path="/Grid/:id" element={<Grid dataGrid={dataGrid} />} />
         </Routes>
       </div>
