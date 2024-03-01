@@ -5,15 +5,12 @@ import { CreateResourcePage } from "./components/CreateResourcePage";
 import { initialState } from "./data";
 import "./styles/App.css";
 
-
 function App() {
-  const [globalState, setGlobalState] = useState(initialState)
+  const [globalState, setGlobalState] = useState(initialState);
   //const [pages, setPages] = useState(pagesContent);
 
   function handleSelect(contentKey, index) {
-
-    setGlobalState({ ...globalState, currentPageKey: contentKey }
-    );
+    setGlobalState({ ...globalState, currentPageKey: contentKey });
   }
 
   function addNew(newContent) {
@@ -23,10 +20,21 @@ function App() {
   return (
     <>
       <Header></Header>
-      {globalState.currentPageKey == "home" && <HomePage onSelect={(item) => handleSelect(item)} pageState={globalState.homePage}></HomePage>}
-      {globalState.currentPageKey == "createResource" && <CreateResourcePage dataResources={globalState.createResourcePage}></CreateResourcePage>}
-      {globalState.currentPageKey == "appServices"}
-      {globalState.currentPageKey == "elasticPools"}
+      {globalState.currentPageKey == "home" && (
+        <HomePage
+          onSelect={(item) => handleSelect(item)}
+          pageState={globalState.homePage}
+        ></HomePage>
+      )}
+      {globalState.currentPageKey == "createResource" && (
+        <Page
+          titleClassName=""
+          title="Create Resource Page"
+          data={globalState.createResourcePage}
+        ></Page>
+      )}
+      {/* {globalState.currentPageKey == "appServices"}
+      {globalState.currentPageKey == "elasticPools"} */}
     </>
   );
 }

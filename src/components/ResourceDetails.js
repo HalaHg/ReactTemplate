@@ -1,5 +1,5 @@
 import "../styles/ResourceDetails.css";
-export function ResourceDetails(props) {
+export default function ResourceDetails(props) {
   const { data } = props;
 
   if (!data) {
