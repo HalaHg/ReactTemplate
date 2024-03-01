@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 export function Header() {
   return (
     <div className="bgHeader">
-      <Link to="">
+      {/* <Link to="">
       <div className="burgerMenu">
         <span></span>
         <span></span>
         <span></span>
       </div>
-      </Link>
+      </Link> */}
       <div className="logo">TEMPLATE</div>
     </div>
   );

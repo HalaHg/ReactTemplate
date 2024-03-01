@@ -1,21 +1,33 @@
 import "../styles/Page.css";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
-export function Page({ onSelect, onAdd, contents }) {
+const contents = [
+  { key: "createResource", name: "Create a resource", src: "add.png" },
+  { key: "appServices", name: "App Services", src: "app-services.png" },
+  { key: "elasticPools", name: "SQL elastic pools", src: "sql-elastic-pools.png" },
+];
+
+export function HomePage({ onSelect, pageState }) {
+
+  useEffect(() => {
+    console.log("loaded");
+
+    return () => {
+      console.log("disposed")
+    }
+  }, []);
+
   return (
     <>
       <h3 className="pageTitle">Azure Services</h3>
       <div className="flexBox">
         {contents.map((content, index) => (
-          <Link
-            to={index > 0 ? "/Grid/" + content.id : "/resource"}
-            key={index}
-          >
+          <div key={index}>
             <button
               key={index}
               className="buttonFlex"
               onClick={() =>
-                content.order > 0 ? onSelect(content, index) : onAdd(content)
+                onSelect(content.key, index)
               }
             >
               <img
@@ -25,7 +37,7 @@ export function Page({ onSelect, onAdd, contents }) {
               />
               {content.name}
             </button>
-          </Link>
+          </div>
         ))}
       </div>
     </>

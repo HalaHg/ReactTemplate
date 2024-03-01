@@ -1,25 +1,19 @@
 import { useState } from "react";
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import { Grid } from "./components/Grid";
 import { Header } from "./components/Header";
-import { Page } from "./components/Page";
+import { HomePage } from "./components/HomePage";
 import { CreateResourcePage } from "./components/CreateResourcePage";
-import { dataGrid, dataResources, pagesContent } from "./data";
+import { initialState } from "./data";
 import "./styles/App.css";
 
 
 function App() {
-  const [pages, setPages] = useState(pagesContent);
+  const [globalState, setGlobalState] = useState(initialState)
+  //const [pages, setPages] = useState(pagesContent);
 
-  function handleSelect(selected) {
-    setPages((pages) => {
-      pages.find((x) => x.order === 1).order = selected.order;
-      pages.find((x) => x.name === selected.name).order = 1;
+  function handleSelect(contentKey, index) {
 
-      return [...pages.sort((a, b) => a.order - b.order)]
-    }
+    setGlobalState({ ...globalState, currentPageKey: contentKey }
     );
-
   }
 
   function addNew(newContent) {
@@ -27,16 +21,13 @@ function App() {
   }
 
   return (
-    <Router>
-      <div>
-        <Header></Header>
-        <Routes>
-          <Route path="/" exact element={<Page onAdd={addNew} onSelect={handleSelect} contents={pages} />} />
-          <Route path="/resource" element={<CreateResourcePage dataResources={dataResources} />} />
-          <Route path="/Grid/:id" element={<Grid dataGrid={dataGrid} />} />
-        </Routes>
-      </div>
-    </Router>
+    <>
+      <Header></Header>
+      {globalState.currentPageKey == "home" && <HomePage onSelect={(item) => handleSelect(item)} pageState={globalState.homePage}></HomePage>}
+      {globalState.currentPageKey == "createResource" && <CreateResourcePage dataResources={globalState.createResourcePage}></CreateResourcePage>}
+      {globalState.currentPageKey == "appServices"}
+      {globalState.currentPageKey == "elasticPools"}
+    </>
   );
 }
 
