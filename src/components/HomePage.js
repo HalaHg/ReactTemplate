@@ -2,9 +2,9 @@ import "../styles/Page.css";
 import { useEffect } from "react";
 
 const contents = [
-  { key: "createResource", name: "Create a resource", src: "add.png" },
-  { key: "appServices", name: "App Services", src: "app-services.png" },
-  { key: "elasticPools", name: "SQL elastic pools", src: "sql-elastic-pools.png" },
+  { key: "createResourcePage", name: "Create a resource", src: "add.png" },
+  { key: "appServicesPage", name: "App Services", src: "app-services.png" },
+  { key: "elasticPoolsPage", name: "SQL elastic pools", src: "sql-elastic-pools.png" },
 ];
 
 export function HomePage({ onSelect, pageState }) {
@@ -27,7 +27,7 @@ export function HomePage({ onSelect, pageState }) {
               key={index}
               className="buttonFlex"
               onClick={() =>
-                onSelect(content.key, index)
+                onSelect(content)
               }
             >
               <img

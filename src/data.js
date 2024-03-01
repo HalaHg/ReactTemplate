@@ -446,6 +446,7 @@ export let data = {
 
 export const initialState = {
   currentPageKey: "home",
+  currentPageTitle: "Home",
 
   homePage: {
     loading: false,
@@ -686,106 +687,9 @@ export const pagesContent = [
   { order: 2, id: 33, name: "SQL elastic pools", src: "sql-elastic-pools.png" },
 ];
 
-export const dataGrid = [
+export const appServiceGrid = [
   {
-    id: 33,
-    title: "SQL elastic pools",
-    buttons: [
-      {
-        title: "Create",
-        icon: "plus",
-        class: "fas fa-plus",
-        hidden: false,
-        disabled: false,
-      },
-      {
-        title: "Switch",
-        icon: "arrows",
-        class: "fas fa-arrows",
-        hidden: false,
-        disabled: false,
-      },
-      {
-        title: "Reservation",
-        icon: "clock",
-        class: "fas fa-clock",
-        hidden: false,
-        disabled: false,
-      },
-      {
-        title: "Manage",
-        icon: "settings",
-        class: "fas fa-tools",
-        hidden: false,
-        disabled: true,
-      },
-    ],
-    columnDefs: [
-      { headerName: "Name", field: "name", headerCheckboxSelection: true, checkboxSelection: true },
-      { headerName: "Type", field: "type" },
-      { headerName: "Subscription", field: "subscription" },
-      { headerName: "Resource group", field: "resourceGroup" },
-      { headerName: "Location", field: "location" },
-      { headerName: "Status", field: "status" },
-      { headerName: "Operating System", field: "operatingSystem" },
-      { headerName: "Size", field: "size" },
-      { headerName: "Public IP Address", field: "publicIpAddress" },
-      { headerName: "Disks", field: "disks" },
-    ],
-    rowData: [
-      {
-        name: "CEREBRO",
-        type: "Virtual Machine",
-        subscription: "CEREBRO SUB",
-        resourceGroup: "CEREBRO 360 RG",
-        location: "East US",
-        status: "Running",
-        operatingSystem: "Windows",
-        size: "Standard",
-        publicIpAddress: "1.1.1.1",
-        disks: "2",
-      },
-      {
-        name: "CEREBRO",
-        type: "Virtual Machine",
-        subscription: "CEREBRO SUB",
-        resourceGroup: "CEREBRO 360 RG",
-        location: "East US",
-        status: "Running",
-        operatingSystem: "Windows",
-        size: "Standard",
-        publicIpAddress: "1.1.1.1",
-        disks: "2",
-      },
-      {
-        name: "CEREBRO",
-        type: "Virtual Machine",
-        subscription: "CEREBRO SUB",
-        resourceGroup: "CEREBRO 360 RG",
-        location: "East US",
-        status: "Running",
-        operatingSystem: "Windows",
-        size: "Standard",
-        publicIpAddress: "1.1.1.1",
-        disks: "2",
-      },
-      {
-        name: "CEREBRO",
-        type: "Virtual Machine",
-        subscription: "CEREBRO SUB",
-        resourceGroup: "CEREBRO 360 RG",
-        location: "East US",
-        status: "Running",
-        operatingSystem: "Windows",
-        size: "Standard",
-        publicIpAddress: "1.1.1.1",
-        disks: "2",
-      },
-    ],
-  },
-  {
-    id: 34,
-    title: "App Services",
+    name: "appServicesPage",
     buttons: [
       {
         title: "Create",
@@ -922,4 +826,102 @@ export const dataGrid = [
       },
     ],
   },
+];
+
+export const elasticPoolsGrid = [
+  {
+    name: "elasticPoolsPage",
+    buttons: [
+      {
+        title: "Create",
+        icon: "plus",
+        class: "fas fa-plus",
+        hidden: false,
+        disabled: false,
+      },
+      {
+        title: "Switch",
+        icon: "arrows",
+        class: "fas fa-arrows",
+        hidden: false,
+        disabled: false,
+      },
+      {
+        title: "Reservation",
+        icon: "clock",
+        class: "fas fa-clock",
+        hidden: false,
+        disabled: false,
+      },
+      {
+        title: "Manage",
+        icon: "settings",
+        class: "fas fa-tools",
+        hidden: false,
+        disabled: true,
+      },
+    ],
+    columnDefs: [
+      { headerName: "Name", field: "name", headerCheckboxSelection: true, checkboxSelection: true },
+      { headerName: "Type", field: "type" },
+      { headerName: "Subscription", field: "subscription" },
+      { headerName: "Resource group", field: "resourceGroup" },
+      { headerName: "Location", field: "location" },
+      { headerName: "Status", field: "status" },
+      { headerName: "Operating System", field: "operatingSystem" },
+      { headerName: "Size", field: "size" },
+      { headerName: "Public IP Address", field: "publicIpAddress" },
+      { headerName: "Disks", field: "disks" },
+    ],
+    rowData: [
+      {
+        name: "CEREBRO",
+        type: "Virtual Machine",
+        subscription: "CEREBRO SUB",
+        resourceGroup: "CEREBRO 360 RG",
+        location: "East US",
+        status: "Running",
+        operatingSystem: "Windows",
+        size: "Standard",
+        publicIpAddress: "1.1.1.1",
+        disks: "2",
+      },
+      {
+        name: "CEREBRO",
+        type: "Virtual Machine",
+        subscription: "CEREBRO SUB",
+        resourceGroup: "CEREBRO 360 RG",
+        location: "East US",
+        status: "Running",
+        operatingSystem: "Windows",
+        size: "Standard",
+        publicIpAddress: "1.1.1.1",
+        disks: "2",
+      },
+      {
+        name: "CEREBRO",
+        type: "Virtual Machine",
+        subscription: "CEREBRO SUB",
+        resourceGroup: "CEREBRO 360 RG",
+        location: "East US",
+        status: "Running",
+        operatingSystem: "Windows",
+        size: "Standard",
+        publicIpAddress: "1.1.1.1",
+        disks: "2",
+      },
+      {
+        name: "CEREBRO",
+        type: "Virtual Machine",
+        subscription: "CEREBRO SUB",
+        resourceGroup: "CEREBRO 360 RG",
+        location: "East US",
+        status: "Running",
+        operatingSystem: "Windows",
+        size: "Standard",
+        publicIpAddress: "1.1.1.1",
+        disks: "2",
+      },
+    ]
+  }
 ];

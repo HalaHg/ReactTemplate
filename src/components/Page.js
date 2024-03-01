@@ -1,24 +1,48 @@
 import Breadcrumb from "./Breadcrumb";
-import PageContent from "./PageContent";
 import PageTitle from "./PageTitle";
+import { useEffect } from "react";
+import { elasticPoolsGrid, appServiceGrid } from "../data";
+import { dataResources } from "../data";
+import CreateResourcePage from "./CreateResourcePage";
 
-useEffect(() => {
-  console.log("loaded");
+export default function Page({ titleClassName, pageKey, title, data, renderParent }) {
 
-  return () => {
-    console.log("disposed");
-  };
-}, []);
-export default function () {
+  useEffect(() => {
+    data.loading = true;
+    setTimeout(() => {
+      switch (pageKey) {
+        case "appServicesPage": {
+          data.data = elasticPoolsGrid;
+          break;
+        }
+        case "elasticPoolsPage": {
+          data.data = appServiceGrid;
+          break;
+        }
+        case "createResourcePage": {
+          data.data = dataResources;
+          break;
+        }
+      }
+
+      renderParent(pageKey, data.data);
+
+    }, 2000);
+
+    console.log("loaded");
+
+    return () => {
+      console.log("disposed");
+    };
+  }, []);
+
   return (
     <div>
       <Breadcrumb></Breadcrumb>
       <PageTitle rootClassName={titleClassName} title={title}></PageTitle>
-      {/* <PageTitle
-        rootClassName="create-resource-page-root"
-        title={resourceData.title}
-      ></PageTitle> */}
-      <PageContent data={data}></PageContent>
+      {pageKey === "createResourcePage" && <CreateResourcePage dataResources={data.data}></CreateResourcePage>}
+      {pageKey === "elasticPoolsPage" /*&& <CreateResourcePage></CreateResourcePage>} */}
+      {pageKey === "appServicesPage" /*&& <CreateResourcePage></CreateResourcePage>*/}
     </div>
   );
 }

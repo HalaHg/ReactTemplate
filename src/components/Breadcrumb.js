@@ -1,9 +1,8 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import "../styles/Breadcrumb.css";
 const Breadcrumb = () => {
-  const location = useLocation();
-  const pathnames = location.pathname.split("/").filter((x) => x);
+  //const location = useLocation();
+  //const pathnames = location.pathname.split("/").filter((x) => x);
 
   return (
     <div className="breadcrumb">

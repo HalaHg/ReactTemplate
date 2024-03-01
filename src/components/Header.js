@@ -1,16 +1,13 @@
 import "../styles/Header.css";
-import { Link } from 'react-router-dom';
-export function Header() {
+export function Header({ goHome }) {
   return (
     <div className="bgHeader">
-      {/* <Link to="">
-      <div className="burgerMenu">
+      <div onClick={goHome} className="burgerMenu">
         <span></span>
         <span></span>
         <span></span>
       </div>
-      </Link> */}
-      <div className="logo">TEMPLATE</div>
+      <div className="logo">Azure</div>
     </div>
   );
 }

@@ -19,14 +19,6 @@ export default function CreateResourcePage({ dataResources }) {
     });
   }
 
-  useEffect(() => {
-    console.log("loaded");
-
-    return () => {
-      console.log("disposed");
-    };
-  }, []);
-
   return (
     <div style={{ display: "flex" }}>
       <VerticalList
