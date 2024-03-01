@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Header } from "./components/Header";
 import { HomePage } from "./components/HomePage";
 import Page from "./components/Page";
-import { CreateResourcePage } from "./components/CreateResourcePage";
 import { initialState } from "./data";
 import "./styles/App.css";
 
@@ -14,10 +13,6 @@ function App() {
     setGlobalState({ ...globalState, currentPageKey: content.key, currentPageTitle: content.name });
   }
 
-  function addNew(newContent) {
-    console.log(`Added new content: ${newContent.name}`);
-  }
-
   function handleGoHome() {
     setGlobalState({ ...globalState, currentPageKey: "home", currentPageTitle: "Home" });
   }
@@ -26,12 +21,18 @@ function App() {
   //   setGlobalState({ ...globalState, ...[pageKey].data = data });
   // }
 
-  function handleRendering(pageKey, data) { setGlobalState({ ...globalState, [pageKey]: { ...globalState[pageKey], data: data } }); }
+  function handleRendering(data) {
+    setGlobalState({
+      ...globalState,
+      [globalState.currentPageKey]: { ...globalState[globalState.currentPageKey], data: data }
+    }
+    );
+  }
 
   return (
     <>
       <Header goHome={handleGoHome}></Header>
-      {globalState.currentPageKey == "home" ? (
+      {globalState.currentPageKey === "home" ? (
         <HomePage
           onSelect={(item) => handleSelect(item)}
           pageState={globalState.homePage}
@@ -42,7 +43,7 @@ function App() {
           pageKey={globalState.currentPageKey}
           title={globalState.currentPageTitle}
           data={globalState[globalState.currentPageKey]}
-          renderParent={(pageKey, data) => handleRendering(pageKey, data)}
+          renderParent={(data) => handleRendering(data)}
         ></Page>}
 
       {/* {globalState.currentPageKey == "appServices"}

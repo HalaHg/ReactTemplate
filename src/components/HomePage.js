@@ -10,10 +10,10 @@ const contents = [
 export function HomePage({ onSelect, pageState }) {
 
   useEffect(() => {
-    console.log("loaded");
+    //console.log("loaded");
 
     return () => {
-      console.log("disposed")
+      //console.log("disposed")
     }
   }, []);
 
@@ -28,8 +28,7 @@ export function HomePage({ onSelect, pageState }) {
               className="buttonFlex"
               onClick={() =>
                 onSelect(content)
-              }
-            >
+              }>
               <img
                 className="imgClass"
                 src={require(`../images/${content.src}`)}
